@@ -1,40 +1,40 @@
 #1.Создать программный файл в текстовом формате,
 #записать в него построчно данные, вводимые пользователем.
 #Об окончании ввода данных будет свидетельствовать пустая строка.
-f=open ("C:\\text.txt","w",encoding="utf-8")
-s1="Меня зовут Марина\n"
-s2="Я учусь в Geekbrains\n"
-f.write(s1+s2)
-f.close()
+# f=open ("C:\\text.txt","w",encoding="utf-8")
+# s1="Меня зовут Марина\n"
+# s2="Я учусь в Geekbrains\n"
+# f.write(s1+s2)
+# f.close()
 
 
 #2. Создать текстовый файл (не программно), сохранить в нём несколько строк, выполнить подсчёт строк
 # и слов в каждой строке.
-f=open ("C:\\text.txt","r",encoding="utf-8")
-my_text=f.read()
-print(my_text)
-f=open ("C:\\text.txt","r",encoding="utf-8")
-my_text=f.readlines()
-print("Количество строк в тексте",len(my_text))
-f=open ("C:\\text.txt","r",encoding="utf-8")
-my_text=f.read()
-words=my_text.split()
-print("Количество слов в тексте:",len(words))
-f.close()
+# f=open ("C:\\text.txt","r",encoding="utf-8")
+# my_text=f.read()
+# print(my_text)
+# f=open ("C:\\text.txt","r",encoding="utf-8")
+# my_text=f.readlines()
+# print("Количество строк в тексте",len(my_text))
+# f=open ("C:\\text.txt","r",encoding="utf-8")
+# my_text=f.read()
+# words=my_text.split()
+# print("Количество слов в тексте:",len(words))
+# f.close()
 
 #3.Создать текстовый файл (не программно).
 # Построчно записать фамилии сотрудников и величину их окладов (не менее 10 строк).
 # Определить, кто из сотрудников имеет оклад менее 20 тысяч, вывести фамилии этих сотрудников.
 # Выполнить подсчёт средней величины дохода сотрудников.
-with open('sotrudnic.txt', 'r') as my_file:
-  sotrudnic = []
-  res = []
-  my_list = my_file.read().split('\n')
-  for i in my_list:
-       if int(i[1]) < 20000:
-      res.append(i[0])
-    sotrudnic.append(i[1])
-print(f'Оклад меньше 20.000 {sotrudnic}, средний оклад {sum(map(int, res)}')
+# with open('sotrudnic.txt', 'r') as my_file:
+#   sotrudnic = []
+#   res = []
+#   my_list = my_file.read().split('\n')
+#   for i in my_list:
+#        if int(i[1]) < 20000:
+#       res.append(i[0])
+#     sotrudnic.append(i[1])
+# print(f'Оклад меньше 20.000 {sotrudnic}, средний оклад {sum(map(int, res)}')
 
 #4   Cоздать (не программно) текстовый файл со следующим содержимым:
 # One — 1
@@ -45,27 +45,27 @@ print(f'Оклад меньше 20.000 {sotrudnic}, средний оклад {s
 # и считывающую построчно данные. При этом английские
 # числительные должны заменяться на русские.
 # Новый блок строк должен записываться в новый текстовый файл.
-s1 = {'One' : '1', 'Two' : '2', 'Three' : '2', 'Four' : '4'}
-new_list = []
-with open('my_list.txt', 'r') as f:
-
-    for i in f:
-        i = i.split(' ', 1)
-        new_list.append(s1[i[0]] + '  ' + i[1])
-    print(new_list)
-
-with open('my_list2.txt', 'w') as f2:
-    f2.writelines(new_list)
+# s1 = {'One' : '1', 'Two' : '2', 'Three' : '2', 'Four' : '4'}
+# new_list = []
+# with open('my_list.txt', 'r') as f:
+#
+#     for i in f:
+#         i = i.split(' ', 1)
+#         new_list.append(s1[i[0]] + '  ' + i[1])
+#     print(new_list)
+#
+# with open('my_list2.txt', 'w') as f2:
+#     f2.writelines(new_list)
 
 #5
 # Создать (программно) текстовый файл, записать в него программно
 #  набор чисел, разделенных пробелами. Программа должна
 #  подсчитывать сумму чисел в файле и выводить ее на экран.
 
-with open('file.txt', 'w+') as f:
-sl = input(int('Введите цифры через пробел \n'))
-f.writelines(sl)
-print(sum(map(int, sl)))
+# with open('file.txt', 'w+') as f:
+# sl = input(int('Введите цифры через пробел \n'))
+# f.writelines(sl)
+# print(sum(map(int, sl)))
 
 #6
 #Необходимо создать (не программно) текстовый файл, где каждая строка описывает учебный предмет и наличие лекционных,
@@ -81,6 +81,6 @@ print(sum(map(int, sl)))
 subject = {}
 with open('file.txt', 'r') as f:
     for ls in f:
-        subject, lecture, practice, lab = ls.split()
-        subject[subject] = int(lecture) + int(practice) + int(lab)
-    print(f'Общее количество часов по предмету - {subject}')
+        subject, lec, practik, lab = ls.split()
+        subject[subject] =  int(practik) + int(lab)+int(lec)
+    print(f'часы по предмету - {subject}')
